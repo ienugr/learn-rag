@@ -58,6 +58,24 @@ Production-ready KB with feedback loop and maintenance operations.
 python adaptive_kb_demo.py
 ```
 
+### 5. Production Knowledge Base (`production_kb.py`)
+
+Full production-grade KB combining embeddings, cross-encoder reranking, and adaptive learning.
+
+```bash
+python production_kb.py
+```
+
+Features:
+- **Two-stage retrieval** - Broad embedding search, then cross-encoder reranking for precision
+- **Cross-encoder reranking** - LLM scores each query-document pair (0–10) for accurate relevance
+- **Strong grounding** - Strict citation rules and `temperature=0` to prevent hallucination
+- **Confidence filtering** - Low-relevance results (<4/10) are surfaced as gaps, not guesses
+- **CRUD with versioning** - Add, update (re-embeds), and soft-delete documents with timestamps
+- **Gap detection** - Logs unanswered and low-confidence queries for follow-up
+- **Duplicate detection** - Finds redundant documents by configurable similarity threshold
+- **Persistent storage** - Saves full state (documents, embeddings, query log, gaps) to JSON
+
 Features:
 - **Gap detection** - Tracks unanswered questions
 - **Content suggestions** - AI generates templates for missing docs
@@ -107,11 +125,11 @@ Features:
 
 ## Maintenance Operations
 
-**Adding:** `kb.add_document(text, metadata)`
-**Updating:** `kb.add_document(text, metadata, doc_id=5)` (re-embeds)
-**Deleting:** `kb.delete_document(doc_id=5)` (soft delete)
-**Finding duplicates:** `kb.find_duplicates(threshold=0.85)`
-**Gap analysis:** `kb.get_knowledge_gaps()`
+- **Adding:** `kb.add_document(text, metadata)`
+- **Updating:** `kb.add_document(text, metadata, doc_id=5)` (re-embeds)
+- **Deleting:** `kb.delete_document(doc_id=5)` (soft delete)
+- **Finding duplicates:** `kb.find_duplicates(threshold=0.85)`
+- **Gap analysis:** `kb.get_knowledge_gaps()`
 
 ## Features
 
