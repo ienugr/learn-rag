@@ -1,6 +1,6 @@
-# OpenAI Embedding Demo
+# Learn RAG with OpenAI Embeddings
 
-Learn embeddings through practical examples: basic embeddings, RAG knowledge base, grounding techniques, and adaptive knowledge management.
+Learn Retrieval-Augmented Generation (RAG) through practical examples: basic embeddings, semantic search knowledge base, grounding techniques, and adaptive knowledge management.
 
 ## Setup
 
@@ -72,17 +72,7 @@ Features:
 - **Strong grounding** - Strict citation rules and `temperature=0` to prevent hallucination
 - **Confidence filtering** - Low-relevance results (<4/10) are surfaced as gaps, not guesses
 - **CRUD with versioning** - Add, update (re-embeds), and soft-delete documents with timestamps
-- **Gap detection** - Logs unanswered and low-confidence queries for follow-up
-- **Duplicate detection** - Finds redundant documents by configurable similarity threshold
 - **Persistent storage** - Saves full state (documents, embeddings, query log, gaps) to JSON
-
-Features:
-- **Gap detection** - Tracks unanswered questions
-- **Content suggestions** - AI generates templates for missing docs
-- **Update documents** - Fix incorrect information with version tracking
-- **Delete documents** - Remove outdated content
-- **Duplicate detection** - Find redundant documentation
-- **Query logging** - Analyze usage patterns
 
 ## Knowledge Base Lifecycle
 
